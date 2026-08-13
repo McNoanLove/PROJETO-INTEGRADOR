@@ -1,1 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThermoCEP | Aquecimento Solar & Automação Sustentável</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
+  <!-- Barra Acessibilidade Superior -->
+  <div class="accessibility-bar" role="region" aria-label="Controles de Acessibilidade">
+    <div class="container acc-container">
+      <span><strong aria-hidden="true">♿ Acessibilidade:</strong></span>
+      <button id="btn-contrast" title="Alternar Alto Contraste">🎨 Alto Contraste</button>
+
+      <div class="font-controls">
+        <button id="btn-font-dec" title="Diminuir fonte">A-</button>
+        <button id="btn-font-inc" title="Aumentar fonte">A+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navegação -->
+  <header class="main-header">
+    <div class="container header-container">
+      <div class="logo">
+        <span class="logo-icon">🔥🌊</span>
+        <span class="logo-text">Thermo<strong>CEP</strong></span>
+      </div>
+      
+      <nav class="main-nav" aria-label="Navegação Principal">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#optica">Óptica Aplicada</a></li>
+          <li><a href="#simulador">Simulador Solar</a></li>
+          <li><a href="#robotica">Robótica & Automação</a></li>
+          <li><a href="#impacto">Impacto Social</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-badge">Projeto Integrador • Colégio Estadual do Paraná</div>
+        <h1>Engenharia Térmica & Automação Inteligente para a Piscina do CEP</h1>
+        <p>Uma solução sustentável que integra princípios da óptica física, algoritmos de automação e compromisso com o impacto socioambiental.</p>
+        <div class="hero-buttons">
+          <a href="#simulador" class="btn btn-primary">Testar Simulador Térmico</a>
+          <a href="#optica" class="btn btn-secondary">Entender a Ciência</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Óptica Aplicada -->
+    <section id="optica" class="section-block">
+      <div class="container">
+        <div class="section-header">
+          <h2>Tecnociência & Óptica Aplicada</h2>
+          <p>Como a física da luz dita a máxima eficiência na captação do calor solar.</p>
+        </div>
+
+        <div class="grid-2col">
+          <div class="card-info">
+            <h3>Absorção, Reflexão e Refração</h3>
+            <p>A radiação solar atinge os coletores térmicos transportando energia sob a forma de ondas eletromagnéticas. Para otimizar esse ganho:</p>
+            <ul>
+              <li><strong>Corpo Negro e Absorção:</strong> Corpos escuros absorvem praticamente todos os comprimentos de onda da luz visível, transformando energia luminosa em energia térmica.</li>
+              <li><strong>Analogia do Disco de Newton:</strong> O Disco de Newton demonstra que a luz branca é a soma de todas as cores do espectro visível. Uma superfície preta absorve todas essas cores sem refletir nenhuma, acumulando o máximo de calor radiante.</li>
+              <li><strong>Refração e Efeito Estufa nas Placas:</strong> A cobertura de vidro rígido sobre o coletor permite que a luz visível passe (refração), mas aprisiona a radiação infravermelha refletida no interior da placa.</li>
+            </ul>
+          </div>
+
+          <div class="card-info highlight-card">
+            <h3>A Óptica da Câmara Escura nos Coletores</h3>
+            <p>Assim como na <strong>Câmara Escura</strong> a luz entra por um pequeno orifício e se concentra no fundo retendo a projeção da imagem, os **painéis coletores parabólicos** utilizam a geometria dos refletores para concentrar os feixes de luz paralelos em um único tubo focal escuro por onde circula a água.</p>
+            <div class="mini-diagram">
+              <code>[ Feixes de Luz Sol ] ➔ [ Espelho Parabólico ] ➔ ( Foco Térmico ) ➔ [ Água Aquecida ]</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simulador Interativo de Óptica e Temperatura -->
+    <section id="simulador" class="section-block dark-bg">
+      <div class="container">
+        <div class="section-header">
+          <h2>Simulador Interativo de Absorção Solar</h2>
+          <p>Ajuste as propriedades ópticas dos materiais e observe a eficiência térmica gerada.</p>
+        </div>
+
+        <div class="simulator-wrapper">
+          <div class="sim-controls">
+            <div class="control-group">
+              <label for="material-color">Cor da Placa / Coletor:</label>
+              <select id="material-color">
+                <option value="0.95" data-color="#111111">Preto Absoluto (Corpo Negro - 95% absorção)</option>
+                <option value="0.70" data-color="#2b5278">Azul Escuro Térmico (70% absorção)</option>
+                <option value="0.40" data-color="#888888">Cinza Metálico Sem Pintura (40% absorção)</option>
+                <option value="0.10" data-color="#ffffff">Branco Espelhado (10% absorção - Alta reflexão)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="reflector-type">Geometria de Reflexão do Coletor:</label>
+              <select id="reflector-type">
+                <option value="1.0">Placa Plana Simples (1.0x)</option>
+                <option value="1.3">Refletor Plano Adicional (1.3x concentração)</option>
+                <option value="1.8">Concentrador Parabólico Reflexivo (1.8x concentração)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="solar-intensity">Intensidade Solar (W/m²): <span id="sun-val">800</span> W/m²</label>
+              <input type="range" id="solar-intensity" min="200" max="1200" value="800" step="50">
+            </div>
+          </div>
+
+          <div class="sim-display">
+            <div class="plate-preview-box">
+              <div id="plate-visual" class="plate-visual">
+                <span id="plate-status-text">Superfície de Absorção</span>
+              </div>
+            </div>
+
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <span>Eficiência Térmica</span>
+                <strong id="metric-eff">0%</strong>
+              </div>
+              <div class="metric-card">
+                <span>Temp. Estimada da Água</span>
+                <strong id="metric-temp">24°C</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Robótica e Programação -->
+    <section id="robotica" class="section-block">
+      <div class="container">
+        <div class="section-header">
+          <h2>Robótica & Sistema de Automação</h2>
+          <p>O cérebro computacional que otimiza o fluxo de água e previne desperdício de energia.</p>
+        </div>
+
+        <div class="grid-2col">
+          <div class="card-info">
+            <h3>Arquitetura de Sensores e Atuadores</h3>
+            <p>O controle é gerido por um microcontrolador operando sob uma malha fechada de realimentação:</p>
+            <ul class="tech-list">
+              <li><strong>Sensores NTC / DS18B20:</strong> Medem em tempo real a temperatura no topo das placas solares ($T_{placa}$) e no fundo da piscina ($T_{piscina}$).</li>
+              <li><strong>Atuadores (Relés e Bombas):</strong> Ligam/desligam a bomba de circulação d'água apenas quando a diferença $\Delta T = T_{placa} - T_{piscina} \ge 5^\circ\text{C}$.</li>
+              <li><strong>Válvula Solenoide de Três Vias:</strong> Desvia a água do circuito térmico se a placa estiver mais fria que a piscina (ex: durante a noite).</li>
+            </ul>
+          </div>
+
+          <!-- Testador do Algoritmo da Robótica -->
+          <div class="card-info highlight-card">
+            <h3>Simulador de Lógica do Microcontrolador</h3>
+            <p>Ajuste os valores dos sensores abaixo para visualizar a resposta dos atuadores:</p>
+            
+            <div class="interactive-logic-box">
+              <div class="logic-inputs">
+                <label>Temp. Placa Solar: <input type="number" id="sensor-plate" value="38"> °C</label>
+                <label>Temp. Piscina: <input type="number" id="sensor-pool" value="26"> °C</label>
+              </div>
+
+              <div id="logic-output" class="logic-output status-off">
+                <div class="status-indicator"></div>
+                <strong id="actuator-status">Atuador: DESLIGADO</strong>
+                <p id="actuator-reason">Aguardando análise de parâmetros...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impacto Social e Sustentabilidade -->
+    <section id="impacto" class="section-block dark-bg">
+      <div class="container">
+        <div class="section-header">
+          <h2>Inovação, Acessibilidade e Impacto Social</h2>
+          <p>Sustentabilidade ambiental unida ao uso democrático do espaço escolar.</p>
+        </div>
+
+        <div class="cards-grid-3">
+          <div class="card-feature">
+            <div class="card-icon">🌱</div>
+            <h3>Redução da Pegada de Carbono</h3>
+            <p>Substituir resistências elétricas de alta potência por coletores solares reduz a demanda energética da escola, evitando emissões equivalentes de CO₂.</p>
+          </div>
+
+          <div class="card-feature">
+            <div class="card-icon">🏊‍♂️</div>
+            <h3>Inclusão Esportiva no CEP</h3>
+            <p>Uma piscina térmica funcional o ano todo garante a continuidade dos treinos da comunidade escolar e de projetos sociais de natação em períodos frios.</p>
+          </div>
+
+          <div class="card-feature">
+            <div class="card-icon">♿</div>
+            <h3>Design Universal e Acessível</h3>
+            <p>Este portal foi desenvolvido priorizando critérios da norma WCAG 2.1: alto contraste, redimensionamento dinâmico de texto e suporte a leitores de tela.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container footer-container">
+      <p>Projeto Integrador • Colégio Estadual do Paraná (CEP)</p>
+      <p class="sub-footer">Desenvolvido com foco em Ciência, Sustentabilidade e Inclusão Digital.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
